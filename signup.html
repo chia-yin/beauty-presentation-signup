@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡報美顏教學 - 線上報名</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, #e8d5f2 0%, #d4f1f9 50%, #c8f0e8 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(100, 50, 200, 0.15);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1 0%, #10b981 100%);
+            margin-bottom: 40px;
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            color: #1e293b;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+            padding-right: 40px;
+            cursor: pointer;
+            color: #1e293b;
+        }
+
+        select option {
+            color: #1e293b;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        button {
+            flex: 1;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-reset {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .btn-reset:hover {
+            background: #e2e8f0;
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-message.success {
+            background: #dcfce7;
+            color: #166534;
+            border: 2px solid #86efac;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #fca5a5;
+            display: block;
+        }
+
+        .loading {
+            display: none;
+        }
+
+        .loading.show {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 24px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">⭐</div>
+            <span class="badge">● 線上報名</span>
+            <h1>簡報美顏教學</h1>
+            <p class="subtitle">透過 AI 更清晰呈現地呈現你的內容</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="name">姓名 *</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="請輸入您的姓名"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="department">事業部 *</label>
+                <select id="department" name="department" required>
+                    <option value="">請選擇事業部</option>
+                    <option value="九似五三">九似五三</option>
+                    <option value="九四必贏">九四必贏</option>
+                    <option value="九似歐映">九似歐映</option>
+                    <option value="九似賦初">九似賦初</option>
+                    <option value="九駟舞擊">九駟舞擊</option>
+                    <option value="康盈家泰">康盈家泰</option>
+                    <option value="堡家衛國">堡家衛國</option>
+                    <option value="湘芯">湘芯</option>
+                    <option value="賢情衣至">賢情衣至</option>
+                    <option value="康九世強">康九世強</option>
+                    <option value="康九冠軍">康九冠軍</option>
+                    <option value="康盈夥叢">康盈夥叢</option>
+                    <option value="康盈暘逸">康盈暘逸</option>
+                    <option value="康盈兆葉">康盈兆葉</option>
+                    <option value="湘芯興盟">湘芯興盟</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">電話 *</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="請輸入您的電話號碼"
+                    pattern="[0-9+\-\s()]*"
+                    required
+                >
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-submit">
+                    <span class="loading" id="loading"></span>報名參加
+                </button>
+                <button type="reset" class="btn-reset">清除</button>
+            </div>
+
+            <div class="form-message" id="formMessage"></div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        const formMessage = document.getElementById('formMessage');
+        const loadingSpinner = document.getElementById('loading');
+
+        // 改這裡：貼上你的 Google Apps Script Web App URL
+        const WEB_APP_URL = 'https://script.google.com/macros/d/YOUR_SCRIPT_ID/userwithauth';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            // 驗證
+            if (!data.name.trim() || !data.department || !data.phone.trim()) {
+                showMessage('請填寫所有必填欄位', 'error');
+                return;
+            }
+
+            loadingSpinner.classList.add('show');
+
+            try {
+                const response = await fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: new URLSearchParams(data)
+                });
+
+                // 因為 no-cors，無法檢查狀態，所以假設成功
+                showMessage('✓ 報名成功！感謝您的報名', 'success');
+                form.reset();
+                loadingSpinner.classList.remove('show');
+
+            } catch (error) {
+                showMessage('報名失敗，請稍後重試', 'error');
+                loadingSpinner.classList.remove('show');
+                console.error('Error:', error);
+            }
+        });
+
+        function showMessage(text, type) {
+            formMessage.textContent = text;
+            formMessage.className = `form-message ${type}`;
+            setTimeout(() => {
+                if (type === 'success') {
+                    formMessage.className = 'form-message';
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
