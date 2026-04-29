@@ -283,32 +283,42 @@
         }
 
         .event-section {
-            padding: 18px;
-            border-radius: 14px;
-            margin-bottom: 16px;
-            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 14px;
+            border: 1.5px solid;
         }
 
         .event-time {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.15);
+            background: rgba(16, 185, 129, 0.08);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #047857;
         }
 
         .event-access {
-            background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
-            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.15);
+            background: rgba(139, 92, 246, 0.08);
+            border-color: rgba(139, 92, 246, 0.3);
+            color: #6d28d9;
         }
 
         .zoom-info {
-            background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
-            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.15);
+            background: rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #1e40af;
+        }
+
+        .event-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 14px;
         }
 
         .event-section h3 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            margin-bottom: 10px;
-            opacity: 0.9;
+            margin-bottom: 8px;
+            opacity: 1;
         }
 
         .event-detail {
@@ -360,28 +370,6 @@
         </div>
 
         <div class="divider"></div>
-
-        <div style="margin-bottom: 28px;">
-            <h3 style="font-size: 16px; color: #1e3a8a; margin-bottom: 14px; font-weight: 700;">你將獲得</h3>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <span class="benefit-icon">✨</span>
-                    <h4>快速生成框架</h4>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">🎯</span>
-                    <h4>AI 優化內容</h4>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">💡</span>
-                    <h4>實戰案例拆解</h4>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">🚀</span>
-                    <h4>專業簡報流程</h4>
-                </div>
-            </div>
-        </div>
 
         <form id="signupForm">
             <div class="form-group">
@@ -435,27 +423,51 @@
             </div>
         </div>
 
-        <div class="event-section event-access">
-            <h3>入場方式</h3>
-            <div class="event-detail">
-                <div class="event-detail-label">方式</div>
-                <div class="event-detail-value">報名後憑本名入場</div>
+        <div class="event-row">
+            <div class="event-section event-access">
+                <h3>入場方式</h3>
+                <div class="event-detail">
+                    <div class="event-detail-label">方式</div>
+                    <div class="event-detail-value">報名後憑本名入場</div>
+                </div>
+                <div class="event-detail" style="margin-bottom: 0;">
+                    <div class="event-detail-label">說明</div>
+                    <div class="event-detail-value">未報名無法入場</div>
+                </div>
             </div>
-            <div class="event-detail" style="margin-bottom: 0;">
-                <div class="event-detail-label">說明</div>
-                <div class="event-detail-value">未報名無法入場</div>
+
+            <div class="event-section zoom-info">
+                <h3>Zoom 連線</h3>
+                <div class="event-detail">
+                    <div class="event-detail-label">房號</div>
+                    <div class="event-detail-value">964 645 4842</div>
+                </div>
+                <div class="event-detail" style="margin-bottom: 0;">
+                    <div class="event-detail-label">密碼</div>
+                    <div class="event-detail-value">2026957</div>
+                </div>
             </div>
         </div>
 
-        <div class="event-section zoom-info">
-            <h3>Zoom 連線</h3>
-            <div class="event-detail">
-                <div class="event-detail-label">房號</div>
-                <div class="event-detail-value">964 645 4842</div>
-            </div>
-            <div class="event-detail" style="margin-bottom: 0;">
-                <div class="event-detail-label">密碼</div>
-                <div class="event-detail-value">2026957</div>
+        <div style="margin-top: 24px;">
+            <h3 style="font-size: 16px; color: #1e3a8a; margin-bottom: 14px; font-weight: 700;">你將獲得</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">✨</span>
+                    <h4>快速生成框架</h4>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎯</span>
+                    <h4>AI 優化內容</h4>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">💡</span>
+                    <h4>實戰案例拆解</h4>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🚀</span>
+                    <h4>專業簡報流程</h4>
+                </div>
             </div>
         </div>
     </div>
