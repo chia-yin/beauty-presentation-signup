@@ -354,10 +354,9 @@
         <div class="divider"></div>
 
         <div class="event-info">
-            <h3>📅 活動資訊</h3>
+            <h3 style="margin-bottom: 16px;">活動資訊</h3>
 
             <div class="event-detail">
-                <div class="event-detail-icon">🕐</div>
                 <div class="event-detail-content">
                     <div class="event-detail-label">開始時間</div>
                     <div class="event-detail-value">2026年5月1日 21:30</div>
@@ -365,7 +364,6 @@
             </div>
 
             <div class="event-detail">
-                <div class="event-detail-icon">📍</div>
                 <div class="event-detail-content">
                     <div class="event-detail-label">平台</div>
                     <div class="event-detail-value">Zoom 線上分享</div>
@@ -373,7 +371,6 @@
             </div>
 
             <div class="event-detail">
-                <div class="event-detail-icon">🔐</div>
                 <div class="event-detail-content">
                     <div class="event-detail-label">房號</div>
                     <div class="event-detail-value">964 645 4842</div>
@@ -381,7 +378,6 @@
             </div>
 
             <div class="event-detail">
-                <div class="event-detail-icon">🔑</div>
                 <div class="event-detail-content">
                     <div class="event-detail-label">密碼</div>
                     <div class="event-detail-value">2026957</div>
@@ -389,10 +385,31 @@
             </div>
 
             <div class="event-detail" style="margin-bottom: 0;">
-                <div class="event-detail-icon">✓</div>
                 <div class="event-detail-content">
                     <div class="event-detail-label">入場方式</div>
-                    <div class="event-detail-value">憑本名入場</div>
+                    <div class="event-detail-value">報名後憑本名入場（未報名無法入場）</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 35px;">
+            <h3 style="font-size: 18px; color: #1e3a8a; margin-bottom: 20px; font-weight: 700;">你將獲得</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">✨</span>
+                    <h4>快速生成框架</h4>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎯</span>
+                    <h4>AI 優化內容</h4>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">💡</span>
+                    <h4>實戰案例拆解</h4>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🚀</span>
+                    <h4>專業簡報流程</h4>
                 </div>
             </div>
         </div>
@@ -431,18 +448,6 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="phone">電話 *</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="請輸入您的電話號碼"
-                    pattern="[0-9+\-\s()]*"
-                    required
-                >
-            </div>
-
             <div class="button-group">
                 <button type="submit" class="btn-submit">
                     <span class="loading" id="loading"></span>報名參加
@@ -469,7 +474,7 @@
             const data = Object.fromEntries(formData);
 
             // 驗證
-            if (!data.name.trim() || !data.department || !data.phone.trim()) {
+            if (!data.name.trim() || !data.department) {
                 showMessage('請填寫所有必填欄位', 'error');
                 return;
             }
