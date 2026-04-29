@@ -324,7 +324,7 @@
         .event-detail {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-size: 14px;
             line-height: 1.5;
         }
@@ -343,6 +343,12 @@
         .event-detail-value {
             font-weight: 500;
             font-size: 14px;
+        }
+
+        .event-detail-value.small {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 4px;
         }
 
         @media (max-width: 600px) {
@@ -370,6 +376,37 @@
         </div>
 
         <div class="divider"></div>
+
+        <div class="event-section event-time">
+            <h3>活動時間</h3>
+            <div class="event-detail">
+                <div class="event-detail-label">時間</div>
+                <div class="event-detail-value">2026年5月1日 21:30</div>
+            </div>
+        </div>
+
+        <div class="event-row">
+            <div class="event-section event-access">
+                <h3>入場方式</h3>
+                <div class="event-detail">
+                    <div class="event-detail-label">方式</div>
+                    <div class="event-detail-value">報名後憑本名入場</div>
+                </div>
+                <div class="event-detail-value small">未報名無法入場</div>
+            </div>
+
+            <div class="event-section zoom-info">
+                <h3>Zoom 連線</h3>
+                <div class="event-detail">
+                    <div class="event-detail-label">房號</div>
+                    <div class="event-detail-value">964 645 4842</div>
+                </div>
+                <div class="event-detail">
+                    <div class="event-detail-label">密碼</div>
+                    <div class="event-detail-value">2026957</div>
+                </div>
+            </div>
+        </div>
 
         <form id="signupForm">
             <div class="form-group">
@@ -414,40 +451,6 @@
 
             <div class="form-message" id="formMessage"></div>
         </form>
-
-        <div class="event-section event-time">
-            <h3>活動時間</h3>
-            <div class="event-detail">
-                <div class="event-detail-label">時間</div>
-                <div class="event-detail-value">2026年5月1日 21:30</div>
-            </div>
-        </div>
-
-        <div class="event-row">
-            <div class="event-section event-access">
-                <h3>入場方式</h3>
-                <div class="event-detail">
-                    <div class="event-detail-label">方式</div>
-                    <div class="event-detail-value">報名後憑本名入場</div>
-                </div>
-                <div class="event-detail" style="margin-bottom: 0;">
-                    <div class="event-detail-label">說明</div>
-                    <div class="event-detail-value">未報名無法入場</div>
-                </div>
-            </div>
-
-            <div class="event-section zoom-info">
-                <h3>Zoom 連線</h3>
-                <div class="event-detail">
-                    <div class="event-detail-label">房號</div>
-                    <div class="event-detail-value">964 645 4842</div>
-                </div>
-                <div class="event-detail" style="margin-bottom: 0;">
-                    <div class="event-detail-label">密碼</div>
-                    <div class="event-detail-value">2026957</div>
-                </div>
-            </div>
-        </div>
 
         <div style="margin-top: 24px;">
             <h3 style="font-size: 16px; color: #1e3a8a; margin-bottom: 14px; font-weight: 700;">你將獲得</h3>
