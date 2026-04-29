@@ -250,81 +250,89 @@
         .benefits-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 35px;
+            gap: 12px;
+            margin-bottom: 28px;
         }
 
         .benefit-card {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
             border: 2px solid #e0f2fe;
-            padding: 20px;
-            border-radius: 14px;
+            padding: 14px;
+            border-radius: 12px;
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .benefit-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
             border-color: #0369a1;
         }
 
         .benefit-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
+            font-size: 28px;
+            margin-bottom: 6px;
             display: block;
         }
 
         .benefit-card h4 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: #1e3a8a;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
-        .event-info {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            color: white;
-            padding: 24px;
-            border-radius: 16px;
-            margin-bottom: 35px;
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
-        }
-
-        .event-info h3 {
-            font-size: 16px;
-            font-weight: 700;
+        .event-section {
+            padding: 18px;
+            border-radius: 14px;
             margin-bottom: 16px;
+            color: white;
+        }
+
+        .event-time {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.15);
+        }
+
+        .event-access {
+            background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.15);
+        }
+
+        .zoom-info {
+            background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.15);
+        }
+
+        .event-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
             opacity: 0.9;
         }
 
         .event-detail {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 14px;
-            font-size: 15px;
-            line-height: 1.6;
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
-        .event-detail-icon {
-            font-size: 20px;
-            margin-right: 12px;
-            min-width: 24px;
-        }
-
-        .event-detail-content {
-            flex: 1;
+        .event-detail:last-child {
+            margin-bottom: 0;
         }
 
         .event-detail-label {
-            font-size: 12px;
+            font-size: 11px;
             opacity: 0.8;
-            margin-bottom: 2px;
+            min-width: 60px;
+            font-weight: 600;
         }
 
         .event-detail-value {
-            font-weight: 600;
-            font-size: 15px;
+            font-weight: 500;
+            font-size: 14px;
         }
 
         @media (max-width: 600px) {
@@ -353,47 +361,8 @@
 
         <div class="divider"></div>
 
-        <div class="event-info">
-            <h3 style="margin-bottom: 16px;">活動資訊</h3>
-
-            <div class="event-detail">
-                <div class="event-detail-content">
-                    <div class="event-detail-label">開始時間</div>
-                    <div class="event-detail-value">2026年5月1日 21:30</div>
-                </div>
-            </div>
-
-            <div class="event-detail">
-                <div class="event-detail-content">
-                    <div class="event-detail-label">平台</div>
-                    <div class="event-detail-value">Zoom 線上分享</div>
-                </div>
-            </div>
-
-            <div class="event-detail">
-                <div class="event-detail-content">
-                    <div class="event-detail-label">房號</div>
-                    <div class="event-detail-value">964 645 4842</div>
-                </div>
-            </div>
-
-            <div class="event-detail">
-                <div class="event-detail-content">
-                    <div class="event-detail-label">密碼</div>
-                    <div class="event-detail-value">2026957</div>
-                </div>
-            </div>
-
-            <div class="event-detail" style="margin-bottom: 0;">
-                <div class="event-detail-content">
-                    <div class="event-detail-label">入場方式</div>
-                    <div class="event-detail-value">報名後憑本名入場（未報名無法入場）</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-bottom: 35px;">
-            <h3 style="font-size: 18px; color: #1e3a8a; margin-bottom: 20px; font-weight: 700;">你將獲得</h3>
+        <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 16px; color: #1e3a8a; margin-bottom: 14px; font-weight: 700;">你將獲得</h3>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <span class="benefit-icon">✨</span>
@@ -457,6 +426,38 @@
 
             <div class="form-message" id="formMessage"></div>
         </form>
+
+        <div class="event-section event-time">
+            <h3>活動時間</h3>
+            <div class="event-detail">
+                <div class="event-detail-label">時間</div>
+                <div class="event-detail-value">2026年5月1日 21:30</div>
+            </div>
+        </div>
+
+        <div class="event-section event-access">
+            <h3>入場方式</h3>
+            <div class="event-detail">
+                <div class="event-detail-label">方式</div>
+                <div class="event-detail-value">報名後憑本名入場</div>
+            </div>
+            <div class="event-detail" style="margin-bottom: 0;">
+                <div class="event-detail-label">說明</div>
+                <div class="event-detail-value">未報名無法入場</div>
+            </div>
+        </div>
+
+        <div class="event-section zoom-info">
+            <h3>Zoom 連線</h3>
+            <div class="event-detail">
+                <div class="event-detail-label">房號</div>
+                <div class="event-detail-value">964 645 4842</div>
+            </div>
+            <div class="event-detail" style="margin-bottom: 0;">
+                <div class="event-detail-label">密碼</div>
+                <div class="event-detail-value">2026957</div>
+            </div>
+        </div>
     </div>
 
     <script>
